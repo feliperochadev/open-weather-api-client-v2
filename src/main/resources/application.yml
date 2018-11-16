@@ -1,0 +1,35 @@
+### For more properties check:
+### http://docs.spring.io/spring-boot/docs/current/reference/html/common-application-properties.html
+
+### ${name} properties are expanded first by gradle
+### if you want use spring properties you must escape it
+### with backslash for example: \${name}
+
+info:
+  build:
+    name: ${name}
+    description: ${description}
+    version: ${version}
+
+spring:
+    name: ${name}
+
+server.port: 8080
+
+swagger:
+  supportedSubmitMethods: "GET,POST,PUT"
+
+openweatherapi:
+  host: http://api.openweathermap.org/data/2.5
+  apiId: dec0e942453c93197a5d6e225787ab29
+  defaultUnit: metric
+  availableUnities:
+    - metric
+    - imperal
+    - standard
+
+application:
+  cities:
+    - berlin
+    - paris
+    - rome
