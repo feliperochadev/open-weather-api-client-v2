@@ -5,8 +5,8 @@ import com.fasterxml.jackson.annotation.JsonRootName;
 import java.time.LocalDateTime;
 import java.util.List;
 
-@JsonRootName("Forecast")
-public class Forecast {
+@JsonRootName("Weather")
+public class Weather {
 
     private Temperature temperature;
     private String atmosphericPressurehPa;

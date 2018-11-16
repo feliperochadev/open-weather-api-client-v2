@@ -1,6 +1,6 @@
 package com.finleap.casestudy.feliperocha.openweatherapiclient.configuration;
 
-import com.finleap.casestudy.feliperocha.openweatherapiclient.repository.ForecastRepository;
+import com.finleap.casestudy.feliperocha.openweatherapiclient.repository.WeatherRepository;
 import feign.Feign;
 import feign.codec.Decoder;
 import feign.codec.Encoder;
@@ -25,10 +25,10 @@ public class RemoteServiceConfiguration {
 
     @Bean
     @Autowired
-    ForecastRepository forecastRepository(OpenWeatherApiProperties properties, Decoder decoder, Encoder encoder) {
+    WeatherRepository forecastRepository(OpenWeatherApiProperties properties, Decoder decoder, Encoder encoder) {
         return Feign.builder()
                 .decoder(decoder)
                 .encoder(encoder)
-                .target(ForecastRepository.class, properties.getHost());
+                .target(WeatherRepository.class, properties.getHost());
     }
 }

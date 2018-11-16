@@ -5,14 +5,14 @@ import java.util.List;
 public class City {
 
     private String name;
-    private List<Forecast> forecasts;
+    private List<Weather> weathers;
 
-    public List<Forecast> getForecasts() {
-        return forecasts;
+    public List<Weather> getWeathers() {
+        return weathers;
     }
 
-    public void setForecasts(List<Forecast> forecasts) {
-        this.forecasts = forecasts;
+    public void setWeathers(List<Weather> weathers) {
+        this.weathers = weathers;
     }
 
     public String getName() {

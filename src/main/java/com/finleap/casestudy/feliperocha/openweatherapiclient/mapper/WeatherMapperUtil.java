@@ -15,7 +15,7 @@ import java.util.TimeZone;
 import java.util.stream.Collectors;
 
 @Component
-public class ForecastMapperUtil {
+public class WeatherMapperUtil {
 
     private static final String WEATHER_DESCRIPTION_KEY = "description";
     private static final String TEMPERATURE = "temp";
