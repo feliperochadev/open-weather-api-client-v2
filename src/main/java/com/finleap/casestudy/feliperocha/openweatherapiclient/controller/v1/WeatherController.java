@@ -4,6 +4,7 @@ import com.finleap.casestudy.feliperocha.openweatherapiclient.controller.v1.dto.
 import com.finleap.casestudy.feliperocha.openweatherapiclient.controller.v1.dto.WeatherForecastDTO;
 import com.finleap.casestudy.feliperocha.openweatherapiclient.domain.Weather;
 import com.finleap.casestudy.feliperocha.openweatherapiclient.service.WeatherService;
+import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -18,6 +19,7 @@ import static com.finleap.casestudy.feliperocha.openweatherapiclient.controller.
 
 @RestController
 @RequestMapping(path = "/weather", produces = { APPLICATION_JSON }, headers = { API_V1 })
+@Api(value = "Weather", description = "Operations on Weather level")
 public class WeatherController {
 
     private final WeatherService weatherService;
