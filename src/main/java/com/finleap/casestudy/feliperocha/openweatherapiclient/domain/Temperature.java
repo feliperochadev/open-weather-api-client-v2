@@ -1,16 +1,16 @@
 package com.finleap.casestudy.feliperocha.openweatherapiclient.domain;
 
 public class Temperature {
-    private String current;
+    private String average;
     private String min;
     private String max;
 
-    public String getCurrent() {
-        return current;
+    public String getAverage() {
+        return average;
     }
 
-    public void setCurrent(String current) {
-        this.current = current;
+    public void setAverage(String current) {
+        this.average = current;
     }
 
     public String getMin() {

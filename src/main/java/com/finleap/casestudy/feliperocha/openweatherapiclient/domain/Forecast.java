@@ -16,8 +16,6 @@ public class Forecast {
     private String cloudinessPercentage;
 
     private LocalDateTime dateTime;
-    //private LocalDateTime sunRise;
-    //private LocalDateTime sunSet;
 
     public Temperature getTemperature() {
         return temperature;
@@ -74,22 +72,4 @@ public class Forecast {
     public void setDateTime(LocalDateTime dateTime) {
         this.dateTime = dateTime;
     }
-
-    /*public LocalDateTime getSunRise() {
-        return sunRise;
-    }
-
-    public void setSunRise(LocalDateTime sunRise) {
-        this.sunRise = sunRise;
-    }
-
-    public LocalDateTime getSunSet() {
-        return sunSet;
-    }
-
-    public void setSunSet(LocalDateTime sunSet) {
-        this.sunSet = sunSet;
-    }
-    */
-
 }
