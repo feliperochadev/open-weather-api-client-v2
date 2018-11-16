@@ -2,6 +2,7 @@ package com.finleap.casestudy.feliperocha.openweatherapiclient.service;
 
 import com.finleap.casestudy.feliperocha.openweatherapiclient.configuration.CityProperties;
 import com.finleap.casestudy.feliperocha.openweatherapiclient.configuration.OpenWeatherApiProperties;
+import com.finleap.casestudy.feliperocha.openweatherapiclient.controller.v1.dto.WeatherForecastDTO;
 import com.finleap.casestudy.feliperocha.openweatherapiclient.domain.Weather;
 import com.finleap.casestudy.feliperocha.openweatherapiclient.exception.CityNotInTheList;
 import com.finleap.casestudy.feliperocha.openweatherapiclient.mapper.WeatherMapper;
@@ -44,7 +45,7 @@ public class WeatherService {
         return weatherMapper.toWeather(openWeatherWeatherResponse);
     }
 
-    public List<Weather> getForecastHistory(String city) {
+    public List<WeatherForecastDTO> getForecast(String city) {
         OpenWeatherForecastResponse openWeatherForecastResponse =
                 weatherRepository.getForecast(city, openWeatherApiProperties.getApiId(), openWeatherApiProperties.getDefaultUnit());
 

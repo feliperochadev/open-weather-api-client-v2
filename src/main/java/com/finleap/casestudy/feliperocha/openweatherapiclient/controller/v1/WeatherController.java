@@ -1,5 +1,6 @@
 package com.finleap.casestudy.feliperocha.openweatherapiclient.controller.v1;
 
+import com.finleap.casestudy.feliperocha.openweatherapiclient.controller.v1.dto.WeatherForecastDTO;
 import com.finleap.casestudy.feliperocha.openweatherapiclient.domain.Weather;
 import com.finleap.casestudy.feliperocha.openweatherapiclient.service.WeatherService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,7 +34,7 @@ public class WeatherController {
 
     @GetMapping
     @RequestMapping(path = "/{city}/forecast")
-    ResponseEntity<List<Weather>> getForecastHistory(@PathVariable String city) {
-        return ResponseEntity.ok(weatherService.getForecastHistory(city));
+    ResponseEntity<List<WeatherForecastDTO>> getForecastHistory(@PathVariable String city) {
+        return ResponseEntity.ok(weatherService.getForecast(city));
     }
 }

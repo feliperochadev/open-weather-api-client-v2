@@ -1,5 +1,6 @@
 package com.finleap.casestudy.feliperocha.openweatherapiclient.mapper;
 
+import com.finleap.casestudy.feliperocha.openweatherapiclient.controller.v1.dto.WeatherForecastDTO;
 import com.finleap.casestudy.feliperocha.openweatherapiclient.domain.Weather;
 import com.finleap.casestudy.feliperocha.openweatherapiclient.repository.OpenWeatherWeatherResponse;
 import org.mapstruct.*;
@@ -23,5 +24,15 @@ public interface WeatherMapper {
     })
     Weather toWeather(OpenWeatherWeatherResponse openWeatherWeatherResponse);
 
-    List<Weather> toForecast(List<OpenWeatherWeatherResponse> openWeatherWeatherResponse);
+    @Mappings({
+            @Mapping(source = "dt", target = "dateTime", qualifiedBy = DateTime.class),
+            @Mapping(source = "main", target = "temperature.average", qualifiedBy = Temperature.class),
+            @Mapping(source = "main", target = "temperature.max", qualifiedBy = MaxTemperature.class),
+            @Mapping(source = "main", target = "temperature.min", qualifiedBy = MinTemperature.class),
+            @Mapping(source = "main", target = "humidityPercentage", qualifiedBy = HumidityPercentage.class),
+            @Mapping(source = "main", target = "atmosphericPressurehPa", qualifiedBy = AtmosphericPressurehPa.class),
+    })
+    WeatherForecastDTO toWeatherDTO(OpenWeatherWeatherResponse openWeatherWeatherResponse);
+
+    List<WeatherForecastDTO> toForecast(List<OpenWeatherWeatherResponse> openWeatherWeatherResponse);
 }
