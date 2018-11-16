@@ -50,6 +50,8 @@ dependencies {
 	compile 'io.github.openfeign:feign-httpclient:9.5.1'
 	compile 'org.mapstruct:mapstruct-jdk8:1.2.0.Final'
 	apt 'org.mapstruct:mapstruct-processor:1.2.0.Final'
+	compile "cglib:cglib:2.2"
+	testCompile "org.spockframework:spock-core:1.1-groovy-2.4-rc-2"
 }
 
 dependencyManagement {

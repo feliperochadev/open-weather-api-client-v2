@@ -3,7 +3,7 @@ package com.finleap.casestudy.feliperocha.openweatherapiclient.mapper;
 import com.finleap.casestudy.feliperocha.openweatherapiclient.controller.v1.dto.WeatherForecastDTO;
 import com.finleap.casestudy.feliperocha.openweatherapiclient.domain.City;
 import com.finleap.casestudy.feliperocha.openweatherapiclient.domain.Weather;
-import com.finleap.casestudy.feliperocha.openweatherapiclient.repository.OpenWeatherWeatherResponse;
+import com.finleap.casestudy.feliperocha.openweatherapiclient.repository.OpenWeatherResponse;
 import org.mapstruct.*;
 import com.finleap.casestudy.feliperocha.openweatherapiclient.mapper.WeatherMapperUtil.*;
 
@@ -23,7 +23,7 @@ public interface WeatherMapper {
             @Mapping(source = "clouds", target = "cloudinessPercentage", qualifiedBy = CloudinessPercentage.class),
             @Mapping(source = "weather", target = "weatherDescriptions", qualifiedBy = HumidityPercentage.class)
     })
-    Weather toWeather(OpenWeatherWeatherResponse openWeatherWeatherResponse);
+    Weather toWeather(OpenWeatherResponse openWeatherResponse);
 
     @Mappings({
             @Mapping(source = "dt", target = "dateTime", qualifiedBy = DateTime.class),
@@ -33,9 +33,9 @@ public interface WeatherMapper {
             @Mapping(source = "main", target = "humidityPercentage", qualifiedBy = HumidityPercentage.class),
             @Mapping(source = "main", target = "atmosphericPressurehPa", qualifiedBy = AtmosphericPressurehPa.class),
     })
-    WeatherForecastDTO toWeatherDTO(OpenWeatherWeatherResponse openWeatherWeatherResponse);
+    WeatherForecastDTO toWeatherDTO(OpenWeatherResponse openWeatherResponse);
 
-    List<WeatherForecastDTO> toForecast(List<OpenWeatherWeatherResponse> openWeatherWeatherResponse);
+    List<WeatherForecastDTO> toForecast(List<OpenWeatherResponse> openWeatherResponse);
 
     @Mappings({
             @Mapping(source = "name", target = "name"),
@@ -49,8 +49,8 @@ public interface WeatherMapper {
             @Mapping(source = "clouds", target = "weather.cloudinessPercentage", qualifiedBy = CloudinessPercentage.class),
             @Mapping(source = "weather", target = "weather.weatherDescriptions", qualifiedBy = HumidityPercentage.class)
     })
-    City toCity(OpenWeatherWeatherResponse openWeatherWeatherResponse);
+    City toCity(OpenWeatherResponse openWeatherResponse);
 
-    List<City> toCities(List<OpenWeatherWeatherResponse> openWeatherWeatherResponse);
+    List<City> toCities(List<OpenWeatherResponse> openWeatherResponse);
 
 }

@@ -4,21 +4,18 @@ import com.finleap.casestudy.feliperocha.openweatherapiclient.configuration.City
 import com.finleap.casestudy.feliperocha.openweatherapiclient.configuration.OpenWeatherApiProperties;
 import com.finleap.casestudy.feliperocha.openweatherapiclient.controller.v1.dto.*;
 import com.finleap.casestudy.feliperocha.openweatherapiclient.domain.City;
-import com.finleap.casestudy.feliperocha.openweatherapiclient.domain.Temperature;
 import com.finleap.casestudy.feliperocha.openweatherapiclient.domain.Weather;
-import com.finleap.casestudy.feliperocha.openweatherapiclient.exception.CityNotInTheList;
+import com.finleap.casestudy.feliperocha.openweatherapiclient.exception.CityNotInTheListException;
 import com.finleap.casestudy.feliperocha.openweatherapiclient.mapper.WeatherMapper;
 import com.finleap.casestudy.feliperocha.openweatherapiclient.repository.OpenWeatherCitiesWeatherInfoResponse;
-import com.finleap.casestudy.feliperocha.openweatherapiclient.repository.OpenWeatherWeatherResponse;
+import com.finleap.casestudy.feliperocha.openweatherapiclient.repository.OpenWeatherResponse;
 import com.finleap.casestudy.feliperocha.openweatherapiclient.repository.WeatherRepository;
 import com.finleap.casestudy.feliperocha.openweatherapiclient.repository.OpenWeatherForecastResponse;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.template.TemplateLocation;
 import org.springframework.stereotype.Service;
 
 import java.util.*;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 @Service
 public class WeatherService {
@@ -41,13 +38,13 @@ public class WeatherService {
 
     public Weather getWeather(String city) {
         if (isCityNotInList(city)) {
-            throw new CityNotInTheList(city);
+            throw new CityNotInTheListException(city);
         }
 
-        OpenWeatherWeatherResponse openWeatherWeatherResponse =
+        OpenWeatherResponse openWeatherResponse =
                 weatherRepository.getWeather(city, openWeatherApiProperties.getApiId(), openWeatherApiProperties.getDefaultUnit());
 
-        return weatherMapper.toWeather(openWeatherWeatherResponse);
+        return weatherMapper.toWeather(openWeatherResponse);
     }
 
     public List<WeatherForecastDTO> getForecast(String city) {

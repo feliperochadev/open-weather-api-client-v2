@@ -3,7 +3,7 @@ package com.finleap.casestudy.feliperocha.openweatherapiclient.repository;
 import java.util.List;
 import java.util.Map;
 
-public class OpenWeatherWeatherResponse {
+public class OpenWeatherResponse {
     private String dt;
     private List<Map<String, Object>> weather;
     private Map<String, Object> main;

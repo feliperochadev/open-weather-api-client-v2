@@ -23,25 +23,25 @@ public class WeatherController {
     private final WeatherService weatherService;
 
     @Autowired
-    WeatherController(WeatherService weatherService) {
+    public WeatherController(WeatherService weatherService) {
         this.weatherService = weatherService;
     }
 
     @GetMapping
     @RequestMapping(path = "/{city}")
-    ResponseEntity<Weather> getWeather(@PathVariable String city) {
+    public ResponseEntity<Weather> getWeather(@PathVariable String city) {
         return ResponseEntity.ok(weatherService.getWeather(city));
     }
 
     @GetMapping
     @RequestMapping(path = "/{city}/forecast")
-    ResponseEntity<List<WeatherForecastDTO>> getForecastHistory(@PathVariable String city) {
+    public ResponseEntity<List<WeatherForecastDTO>> getForecast(@PathVariable String city) {
         return ResponseEntity.ok(weatherService.getForecast(city));
     }
 
     @GetMapping
     @RequestMapping(path = "/cities")
-    ResponseEntity<CitiesWeatherInfoDTO> getCitiesWeatherInfo() {
+    public ResponseEntity<CitiesWeatherInfoDTO> getCitiesWeatherInfo() {
         return ResponseEntity.ok(weatherService.getCitiesWeatherInfo());
     }
 }

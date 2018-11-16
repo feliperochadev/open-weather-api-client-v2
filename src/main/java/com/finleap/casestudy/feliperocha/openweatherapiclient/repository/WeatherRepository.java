@@ -5,7 +5,7 @@ import feign.RequestLine;
 
 public interface WeatherRepository {
     @RequestLine("GET /weather?q={city}&appid={apiId}&units={unity}")
-    OpenWeatherWeatherResponse getWeather(@Param("city") String city, @Param("apiId") String apiId, @Param("unity") String unity);
+    OpenWeatherResponse getWeather(@Param("city") String city, @Param("apiId") String apiId, @Param("unity") String unity);
 
     @RequestLine("GET /forecast?q={city}&appid={apiId}&units={unity}")
     OpenWeatherForecastResponse getForecast(@Param("city") String city, @Param("apiId") String apiId, @Param("unity") String unity);
