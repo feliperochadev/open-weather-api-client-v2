@@ -1,5 +1,6 @@
 package com.finleap.casestudy.feliperocha.openweatherapiclient.controller.v1;
 
+import com.finleap.casestudy.feliperocha.openweatherapiclient.controller.v1.dto.CitiesWeatherInfoDTO;
 import com.finleap.casestudy.feliperocha.openweatherapiclient.controller.v1.dto.WeatherForecastDTO;
 import com.finleap.casestudy.feliperocha.openweatherapiclient.domain.Weather;
 import com.finleap.casestudy.feliperocha.openweatherapiclient.service.WeatherService;
@@ -36,5 +37,11 @@ public class WeatherController {
     @RequestMapping(path = "/{city}/forecast")
     ResponseEntity<List<WeatherForecastDTO>> getForecastHistory(@PathVariable String city) {
         return ResponseEntity.ok(weatherService.getForecast(city));
+    }
+
+    @GetMapping
+    @RequestMapping(path = "/cities")
+    ResponseEntity<CitiesWeatherInfoDTO> getCitiesWeatherInfo() {
+        return ResponseEntity.ok(weatherService.getCitiesWeatherInfo());
     }
 }

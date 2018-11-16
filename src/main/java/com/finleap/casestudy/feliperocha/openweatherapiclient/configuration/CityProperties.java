@@ -4,20 +4,20 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Configuration;
 
 import javax.validation.constraints.NotNull;
-import java.util.List;
+import java.util.Map;
 
 @Configuration
 @ConfigurationProperties("application")
 public class CityProperties {
 
     @NotNull
-    private List<String> cities;
+    private Map<String, String> cities;
 
-    public List<String> getCities() {
+    public Map<String, String> getCities() {
         return cities;
     }
 
-    public void setCities(List<String> cities) {
+    public void setCities(Map<String, String> cities) {
         this.cities = cities;
     }
 }

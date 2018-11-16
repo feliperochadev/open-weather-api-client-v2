@@ -9,5 +9,8 @@ public interface WeatherRepository {
 
     @RequestLine("GET /forecast?q={city}&appid={apiId}&units={unity}")
     OpenWeatherForecastResponse getForecast(@Param("city") String city, @Param("apiId") String apiId, @Param("unity") String unity);
+
+    @RequestLine("GET /group?id={cityIds}&appid={apiId}&units={unity}")
+    OpenWeatherCitiesWeatherInfoResponse getCitiesWeatherInfo(@Param("cityIds") String cityIds, @Param("apiId") String apiId, @Param("unity") String unity);
 }
 

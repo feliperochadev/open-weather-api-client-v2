@@ -30,6 +30,6 @@ openweatherapi:
 
 application:
   cities:
-    - berlin
-    - paris
-    - rome
+    berlin: 2950159
+    london: 2643743
+    paris: 2988507

@@ -9,6 +9,7 @@ public class OpenWeatherWeatherResponse {
     private Map<String, Object> main;
     private Map<String, Object> wind;
     private Map<String, Object> clouds;
+    private String name;
 
     public String getDt() {
         return dt;
@@ -48,5 +49,13 @@ public class OpenWeatherWeatherResponse {
 
     public void setClouds(Map<String, Object> clouds) {
         this.clouds = clouds;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 }

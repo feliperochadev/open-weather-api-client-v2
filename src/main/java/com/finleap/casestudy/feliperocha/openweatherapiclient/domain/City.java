@@ -1,18 +1,16 @@
 package com.finleap.casestudy.feliperocha.openweatherapiclient.domain;
 
-import java.util.List;
-
 public class City {
 
     private String name;
-    private List<Weather> weathers;
+    private Weather weather;
 
-    public List<Weather> getWeathers() {
-        return weathers;
+    public Weather getWeather() {
+        return weather;
     }
 
-    public void setWeathers(List<Weather> weathers) {
-        this.weathers = weathers;
+    public void setWeather(Weather weather) {
+        this.weather = weather;
     }
 
     public String getName() {

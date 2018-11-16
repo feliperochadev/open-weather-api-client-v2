@@ -1,11 +1,8 @@
 package com.finleap.casestudy.feliperocha.openweatherapiclient.domain;
 
-import com.fasterxml.jackson.annotation.JsonRootName;
-
 import java.time.LocalDateTime;
 import java.util.List;
 
-@JsonRootName("Weather")
 public class Weather {
 
     private Temperature temperature;
