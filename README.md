@@ -1,9 +1,9 @@
 # open-weather-api-client
 Java Rest Client for https://openweathermap.org/
-*There are 3 cities for the get weather endpoint:
-** Berlin
-** Paris
-** London
+* There are 3 cities for the get weather endpoint:
+* Berlin
+* Paris
+* London
 * You can change them on application.yml config
 
 # Running project locally in Docker
