@@ -1,6 +1,5 @@
-package com.finleap.casestudy.feliperocha.openweatherapiclient.controller
+package com.finleap.casestudy.feliperocha.openweatherapiclient.controller.v1
 
-import com.finleap.casestudy.feliperocha.openweatherapiclient.controller.v1.WeatherController
 import com.finleap.casestudy.feliperocha.openweatherapiclient.controller.v1.dto.CitiesWeatherInfoDTO
 import com.finleap.casestudy.feliperocha.openweatherapiclient.controller.v1.dto.CityWithHighestHumidityDTO
 import com.finleap.casestudy.feliperocha.openweatherapiclient.controller.v1.dto.CityWithHighestTemperatureDTO

@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: open-weather-api-client
+
+info:
+  build:
+    name: open-weather-api-client
+    description: open-weather-api-client
+    version: 1.0
